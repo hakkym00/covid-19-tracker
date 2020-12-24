@@ -12,6 +12,7 @@ function InfoBox({
   isRed,
   ...props
 }) {
+  console.log(cases);
   return (
     <div
       className={`infoBox  ${active && "activeBox"} ${
@@ -22,8 +23,8 @@ function InfoBox({
         <CardContent>
           <Typography color="textSecondary">{title}</Typography>
           <h3 className={`infoBox__cases ${isRecovered && "greenText"}`}>
-            {" "}
             {prettyPrintStat(cases)}{" "}
+            <span className="today-text-color">today</span>
           </h3>
           <Typography color="textSecondary">
             {prettyPrintStat(totals)} Totals

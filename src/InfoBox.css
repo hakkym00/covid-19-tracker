@@ -27,3 +27,7 @@
 .greenText {
   color: lightgreen !important;
 }
+.today-text-color {
+  color: #bdbdbd !important;
+  font-size: 15px;
+}

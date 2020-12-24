@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import InfoBox from "./component/InfoBox";
 import Table from "./component/Table";
-import { sortData } from "./util";
+import { prettyPrintStat, sortData } from "./util";
 import LineGraph from "./component/LineGraph";
 import Maps from "./component/Maps";
 import "leaflet/dist/leaflet.css";
@@ -39,7 +39,7 @@ function App() {
       setMapCountries(data);
     };
     getCountriesData();
-  }, [mapCenter]);
+  }, []);
 
   useEffect(() => {
     async function fetchWorldwide() {
@@ -47,7 +47,7 @@ function App() {
       setCountryInfo(data);
     }
     fetchWorldwide();
-  }, [mapCenter]);
+  }, []);
 
   const onChangeCountry = async (e) => {
     const countryCode = e.target.value;
@@ -59,6 +59,7 @@ function App() {
 
     const { data } = await Axios.get(url);
     setCountryInfo(data);
+    console.log(data);
     if (countryCode === "worldwide") {
       setMapCenter([34.80746, -40.4796]);
     } else {
