@@ -16,6 +16,13 @@ body {
   align-items: center;
   margin-bottom: 20px;
 }
+.app__header > h2 {
+  color: #fc3c3c;
+  font-size: 1.7rem;
+}
+.app__container {
+  background-color: white;
+}
 .app__stats {
   display: flex;
   justify-content: space-between;
